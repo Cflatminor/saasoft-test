@@ -1,0 +1,72 @@
+@import "bootstrap/dist/css/bootstrap-grid.min.css";
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/**
+ * нет смысла в рефакторинге, файл маленький. В идеале это библиотека с отдельными модулями
+ * для переменных, миксинов, элементов форм, типографии, анимаций, общих правил и т.д.
+ */
+
+:root {
+  --base-font-size: 16px;
+}
+
+html, body {
+  font-size: var(--base-font-size);
+  font-family: 'Cuprum', sans-serif;
+  line-height: 150%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.loading:before {
+  content: "";
+  position: absolute;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.loading:after {
+  content: "";
+  position: absolute;
+  z-index: 1000;
+  display: block;
+  left: calc(50% - 32px);
+  top: calc(50% - 32px);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 6px solid currentColor;
+  border-color: currentColor transparent currentColor transparent;
+  animation: spinner 1.2s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
