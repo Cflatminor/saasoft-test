@@ -78,7 +78,7 @@ async function updateAccount(account: Account) {
   try {
     await AccountsService.updateAccount(account).then(async (updatedAccount) => {
       if (accounts.value) {
-        accounts.value = accounts.value.map(item => // todo optimize do we only need store.set() to rerender?
+        accounts.value = accounts.value.map(item =>
           item.id === updatedAccount.id ? updatedAccount : item
         );
         await accountsStore.setAccounts(accounts.value);

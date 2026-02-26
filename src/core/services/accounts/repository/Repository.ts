@@ -18,7 +18,7 @@ const defaultAccount: Account = {
   id: '',
   login: '',
   type: AccountTypeEnum.Local,
-  password: null,
+  password: "",
   labels: []
 }
 
