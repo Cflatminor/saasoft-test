@@ -11,14 +11,6 @@ export class ValidationProvider {
     let hasErrors = false;
 
     return await new Promise((resolve, reject) => {
-      // fields.forEach(field => {
-      //   if (ValidationAlgorithms.hasError(field)) {
-      //     reject(field);
-      //   } else {
-      //     field.hasError = true;
-      //     resolve(field);
-      //   }
-      // })
       const validatedFields = fields.map(field => {
         const hasError = ValidationAlgorithms.hasError(field);
 
